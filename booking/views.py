@@ -149,7 +149,7 @@ class TaxViewSet(ModelViewSet, BaseAPIView):
 
 
 class ServicesViewSet(ModelViewSet, BaseAPIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     queryset = Service.objects.all()
     serializer_class = ServicesSerializer
 
@@ -427,8 +427,7 @@ class PackageItemsViewSet(ModelViewSet, BaseAPIView):
 class BookingViewSet(ModelViewSet, BaseAPIView):
     queryset = None
     serializer_class = BookingSerializer
-
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(tags=["Booking"])
     def create(self, request, *args, **kwargs):
@@ -879,8 +878,7 @@ class BookingUpdateViewSet(BaseAPIView, ModelViewSet):
 class AdminChatViewSet(BaseAPIView, ModelViewSet):
     queryset = CustomerSupportChat.objects.all()
     serializer_class = AdminChatSerializer
-
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(tags=["Admin Chat"])
     def create(self, request, *args, **kwargs):
@@ -1087,8 +1085,7 @@ class ChargeViewSet(BaseAPIView, ModelViewSet):
 class DashboardAPIsViewSet(BaseAPIView, ModelViewSet):
     queryset = None
     serializer_class = BookingSerializer
-
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(tags=["Dashboard Analytics"])
     def list(self, request, *args, **kwargs):
@@ -1210,8 +1207,7 @@ class MobileNotificationViewSet(BaseAPIView, ModelViewSet):
 class BookingReportsViewSet(BaseAPIView, ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializerList
-
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(tags=["Reports"])
     def list(self, request, *args, **kwargs):
